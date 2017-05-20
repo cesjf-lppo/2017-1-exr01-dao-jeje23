@@ -18,7 +18,7 @@
         <form method="post">
             <div><label>Pedido: <input type="text" name="pedido" placeholder="digite o pedido"/></label></div>
             <div><label>Dono: <input type="text" name="dono" placeholder="digite o dono"/></label></div>
-            <div><label>Valor: <input type="text" name="telefone" placeholder="digite o valor"/></label></div>
+            <div><label>Valor: <input type="text" name="valor" placeholder="digite o valor"/></label></div>
             <div><label>Nome: <input type="text" name="nome" placeholder=" digite o nome"/></label></div>
             <div><input type="submit" /></div>
         </form>
