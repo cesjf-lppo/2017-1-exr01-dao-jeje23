@@ -34,17 +34,17 @@ public class AdicionarPedidoServlet extends HttpServlet {
         Pedido novoPedido = new Pedido();
         novoPedido.setPedido(Integer.parseInt(request.getParameter("pedido")));
         novoPedido.setDono(request.getParameter("dono"));
-        novoPedido.setValor(Float.parseFloat(request.getParameter("valor")));
+        novoPedido.setValor(Double.parseDouble(request.getParameter("valor")));
         novoPedido.setNome(request.getParameter("nome"));
         
         
         try{
             PedidoDAO dao = new PedidoDAO();
-        dao.cria(novoPedido);
+            dao.cria(novoPedido);
         } catch(Exception ex){
             System.err.println(ex);
             request.setAttribute("mensagem", ex);
-            request.getRequestDispatcher("WEB-INF/novo-contato.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/lista-pedido.jsp").forward(request, response);
             return;
         }
         response.sendRedirect("pedidos.html");
