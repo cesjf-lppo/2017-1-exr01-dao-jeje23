@@ -8,7 +8,7 @@ public class Pedido {
     private Long id;
     private int pedido;
     private String dono;
-    private float valor;
+    private double valor;
     private String nome;
     private Date atualizacao;
     
@@ -48,12 +48,12 @@ public class Pedido {
     }
 
    
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
    
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
