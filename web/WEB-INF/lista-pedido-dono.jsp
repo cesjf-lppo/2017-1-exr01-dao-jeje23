@@ -35,10 +35,11 @@
                 <td>${pedido.atualizacao}</td>
                 </tr>
             </c:forEach>
-                <tr>
+            <tr>
                     <td colspan="5"> Total</td>
                     <td>${total}</td>
                 </tr>
+        
         
     </body>
 </html>
