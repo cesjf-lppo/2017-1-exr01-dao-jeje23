@@ -35,12 +35,13 @@ public class ListaPedidoDonoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          List<Pedido> pedidos;
-          String filtro = request.getParameter("pedido");
-          
+          String filtro = request.getParameter("dono");
+          float total = 0;
         
         try {
             PedidoDAO dao = new PedidoDAO();
             pedidos = dao.getByDono(filtro);
+            total = dao.calculaTotalDono(filtro);
             
         } catch (Exception ex) {
             Logger.getLogger(ListaPedidoServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -50,7 +51,7 @@ public class ListaPedidoDonoServlet extends HttpServlet {
         
         
         request.setAttribute("pedidos" , pedidos);
-     
+        request.setAttribute("total" , total);
         request.getRequestDispatcher("/WEB-INF/lista-pedido-dono.jsp").forward(request, response);
         
     }
